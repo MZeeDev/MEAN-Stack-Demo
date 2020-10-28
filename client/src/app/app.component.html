@@ -1,0 +1,64 @@
+<div >
+  <form
+
+  #heroForm="ngForm" (ngSubmit)="onSubmitForm(heroForm)"
+
+  >
+
+    <div class="form-row align-items-center">
+      <p>Filter by Supplier Name:</p>
+      <div class="col-auto">
+        <label class="sr-only" for="inlineFormInput">Name</label>
+        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Filter by Supplier Name" ngModel required name="supplier" >
+      </div>
+
+      <div class="col-auto">
+        <button  class="btn btn-success" [disabled]="heroForm.invalid" type="submit" class="btn btn-primary mb-2">Submit</button>
+      </div>
+    </div>
+  </form>
+  <div class="table-responsive-md">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>supplier</th>
+        <th>CorporateDescription</th>
+        <th>DepartmentElectronics</th>
+        <th>DocumentNum</th>
+        <th>Edate</th>
+        <th>Quantity</th>
+        <th>Sloc</th>
+        <th>StoreCode</th>
+        <th>UOM</th>
+        <th>brand</th>
+        <th>facilityCode</th>
+        <th>iDocNumber</th>
+        <th>iDocType</th>
+        <th>status</th>
+        <th>batch</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tg of allTags; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{tg.supplier}}</td>
+        <td>{{tg.CorporateDescription}}</td>
+        <td>{{tg.DepartmentElectronics}}</td>
+        <td>{{tg.DocumentNum}}</td>
+        <td>{{tg.Edate | date:'full' }}</td>
+        <td>{{tg.Quantity}}</td>
+        <td>{{tg.Sloc}}</td>
+        <td>{{tg.StoreCode}}</td>
+        <td>{{tg.UOM}}</td>
+        <td>{{tg.brand}}</td>
+        <td>{{tg.facilityCode}}</td>
+        <td>{{tg.iDocNumber}}</td>
+        <td>{{tg.iDocType}}</td>
+        <td>{{tg.status}}</td>
+        <td>{{tg.Batch}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
